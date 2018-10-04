@@ -5,10 +5,12 @@
     post 'auth/login', to: 'authentication#authenticate'
     post 'signup', to: 'users#create'
 
-    
-    resources :songs do
-      resources :notes
+    scope module: :v1, constraints: ApiVersion.new('v1', true) do
+      resources :songs do
+        resources :notes
+      end
     end
+    
   end
   
 
