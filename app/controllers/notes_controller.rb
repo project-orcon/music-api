@@ -44,5 +44,5 @@ before_action :set_song
   def set_song_note
     @note = @song.notes.find_by!(id: params[:id]) if @song
   end
-end
+
 end
